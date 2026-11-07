@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita - Consultorio Naturista Edén</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+   
+<link rel="icon" type="image/png" href="images/logo.jpg">
+
+
+<meta property="og:title" content="Consultorio Naturista Edén - Salud 100% Natural">
+<meta property="og:description" content="Consultas médicas naturistas, tratamientos orgánicos y suplementos certificados. Agenda tu cita hoy.">
+<meta property="og:image" content="images/logo.jpg">
+</head>
+<body>
+
+  
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="images/logo.jpg" alt="Consultorio Naturista Edén" class="logo-img">
+            </a>
+
+            <div class="header-search">
+                <form id="search-form-page" onsubmit="event.preventDefault(); buscarServicio();">
+                    <input type="text" id="search-input" placeholder="¿Qué tratamiento buscas?" required>
+                    <button type="submit" aria-label="Buscar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="cita.html" class="btn-cita-nav active">Agendar Cita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Principal de Citas -->
+    <main class="container cita-page-section">
+        
+        <div class="cita-title-header">
+            <h1>Reserva tu Cita Médica</h1>
+            <p>Selecciona la fecha y completa tus datos. Te confirmaremos por WhatsApp a la brevedad.</p>
+        </div>
+
+        <div class="cita-grid-layout">
+            
+            <!-- Columna Izquierda: Información de Contacto -->
+            <div class="contacto-info-card">
+                <h2>Información de Atención</h2>
+                <div class="linea-decorativa"></div>
+                
+                <div class="info-block">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h3>Ubicación</h3>
+                        <p>Colonia Los Llanos, 8a. Calle 3-44 (a un costado de las canchas), Jocotenango.</p>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h3>Horarios de Atención</h3>
+                        <p>Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                        <p>Sábados: Cerrado</p>
+                        <p>Domingos: 8:00 AM - 12:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h3>Teléfonos & WhatsApp</h3>
+                        <p>TEL: +502  3442-1601</p>
+                        <p>WhatsApp:  +502  3442-1601</p>
+                    </div>
+                </div>
+
+                <!-- Botón Directo de Mapa -->
+                <a href="https://maps.app.goo.gl/ktrPptJkrCoF2fEw8?g_st=aw" target="_blank" rel="noopener noreferrer" class="btn-mapa-cita">
+                    <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
+                </a>
+            </div>
+
+            <!-- Columna Derecha: Formulario de Cita -->
+            <div class="form-cita-card">
+                <h2>Formulario de Reserva</h2>
+                
+                <form id="form-agendar-cita" onsubmit="enviarCitaWhatsApp(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" required placeholder="Ej. Ana García">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / WhatsApp *</label>
+                        <input type="tel" id="telefono" required placeholder="Ej. 5555-5555">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servicio">Tratamiento o Servicio *</label>
+                        <select id="servicio" required>
+                            <option value="" disabled selected>Selecciona una opción...</option>
+                            <option value="Consulta General Naturista">Consulta General Naturista</option>
+                            <option value="Terapia de Desintoxicación">Terapia de Desintoxicación</option>
+                            <option value="Evaluación Nutricional">Evaluación Nutricional</option>
+                            <option value="Asesoría en Farmacia Natural">Asesoría de Productos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">Fecha Deseada *</label>
+                            <input type="date" id="fecha" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora">Horario Preferido *</label>
+                            <select id="hora" required>
+                                <option value="Mañana (8:00 AM - 12:00 PM)">Mañana</option>
+                                <option value="Tarde (1:00 PM - 5:00 PM)">Tarde</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notas">Notas Adicionales (Opcional)</label>
+                        <textarea id="notas" rows="3" placeholder="¿Algún síntoma o detalle que debamos saber?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit-cita">
+                        <i class="fa-brands fa-whatsapp"></i> Confirmar Cita por WhatsApp
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Consultorio Naturista Edén. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

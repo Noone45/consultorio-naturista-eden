@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos - Consultorio Naturista Edén</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css?v=2.0">
+
+    <link rel="icon" type="image/png" href="images/logo.jpg">
+
+
+<meta property="og:title" content="Consultorio Naturista Edén - Salud 100% Natural">
+<meta property="og:description" content="Consultas médicas naturistas, tratamientos orgánicos y suplementos certificados. Agenda tu cita hoy.">
+<meta property="og:image" content="images/logo.jpg">
+
+</head>
+<body>
+
+  
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="images/logo.jpg" alt="Consultorio Naturista Edén" class="logo-img">
+            </a>
+
+          
+            <div class="header-search">
+                <form id="search-form-page" onsubmit="event.preventDefault(); filtrarProductosPagina();">
+                    <input type="text" id="search-input-page" placeholder="Buscar medicina, suplementos..." required>
+                    <button type="submit" aria-label="Buscar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="productos.html" class="active">Productos</a></li>
+                  
+                    <li><a href="cita.html" class="btn-cita-nav">Agendar Cita</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+   
+    <section class="productos-header-page container">
+        <h1>Catálogo General de Productos Naturistas</h1>
+        <p>Encuentra suplementos, jarabes, tinturas y medicina 100% natural. Envíos y consultas directas a nuestro WhatsApp.</p>
+        
+    
+      <div class="categorias-filter-wrapper">
+    <div class="categorias-filter">
+        <button class="btn-filter active" onclick="filtrarCategoria('todos')">Todos</button>
+        <button class="btn-filter" onclick="filtrarCategoria('vitaminas-y-minerales')">Vitaminas y Minerales</button>
+        <button class="btn-filter" onclick="filtrarCategoria('salud-femenina-masculina')">Salud Femenina y Masculina</button>
+        <button class="btn-filter" onclick="filtrarCategoria('salud-ninos')">Salud Niños</button>
+        <button class="btn-filter" onclick="filtrarCategoria('salud-urinaria')">Salud Urinaria</button>
+        <button class="btn-filter" onclick="filtrarCategoria('salud-cardio-circulatorio')">Salud Cardio y Circulatorio</button>
+        <button class="btn-filter" onclick="filtrarCategoria('sistema-inmune')">Sistema Inmune</button> 
+        <button class="btn-filter" onclick="filtrarCategoria('sistema-digestivo')">Sistema Digestivo</button>
+        <button class="btn-filter" onclick="filtrarCategoria('control-azucar')">Control de Azúcar</button>
+        <button class="btn-filter" onclick="filtrarCategoria('super-foods-capsulas')">Super Foods Cápsulas</button>
+        <button class="btn-filter" onclick="filtrarCategoria('super-foods-plantas')">Super Foods Plantas</button> 
+        <button class="btn-filter" onclick="filtrarCategoria('estres-y-sueno')">Estrés y Sueño</button>
+        <button class="btn-filter" onclick="filtrarCategoria('dolor-y-antiinflamacion')">Dolor y Antiinflamación</button>
+        <button class="btn-filter" onclick="filtrarCategoria('control-de-peso-y-detox')">Control de Peso y Detox</button>
+        <button class="btn-filter" onclick="filtrarCategoria('hidratacion-y-minerales')">Hidratación y Minerales</button>
+        <button class="btn-filter" onclick="filtrarCategoria('aceites-esenciales')">Aceites Esenciales</button>
+        <button class="btn-filter" onclick="filtrarCategoria('flores-de-bach')">Flores de Bach</button>
+    </div>
+</div>
+      
+<div class="disclaimer-banner">
+    <i class="fa-solid fa-circle-info"></i>
+    <p><strong>Nota importante sobre precios:</strong> Los precios mostrados son de referencia pública y pueden variar sin previo aviso según disponibilidad o actualización de laboratorio. El precio final y la disponibilidad exacta se confirmarán directamente al coordinar tu pedido por WhatsApp.</p>
+</div>
+    </section>
+
+   
+   <section class="container productos-container-page">
+  
+    <div class="productos-grid" id="grid-productos-completo"></div>
+</section>
+
+
+<script src="productos-datos.js"></script>
+<script src="script.js"></script>
+
+
+     <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Consultorio Naturista Edén</h3>
+                <p>Tu aliado en salud alternativa y medicina natural de confianza.</p>
+                <small class="disclaimer">
+            * Los pedidos iniciados en este catálogo se confirman y procesan vía WhatsApp. Envíos a todo el país mediante transporte local.
+        </small>
+        <div class="footer-links">
+            <a href="terminos.html">Términos de Envío y Venta</a> | 
+            <a href="privacidad.html">Política de Privacidad</a>
+        </div>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="nosotros.html" class="nav-link">Nuestra Filosofía</a></li>
+                    <li><a href="cita.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><i class="fa-solid fa-phone"></i> TEL: +502 3442-1601</p>
+                <p><i class="fa-solid fa-location-dot"></i> Jocotenango, Sacatepequez</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Consultorio Naturista Edén. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
