@@ -1283,6 +1283,7 @@ background-color: var(--primary);
     align-items: center;
     gap: 12px;
     padding: 10px 15px;
+    
   }
 
   /* 2. Colocar el logo primero */
@@ -1298,10 +1299,10 @@ background-color: var(--primary);
 
   /* 4. Colocar la barra de búsqueda al final y centrada */
   .header-search {
-    order: 3;
+   
     width: 100%;
     max-width: 90%;
-    margin: 5px auto 0 auto;
+    margin: 4px auto 0 auto;
   }
 
   /* 5. Asegurar que la barra ocupe todo el ancho disponible */
@@ -1314,4 +1315,27 @@ background-color: var(--primary);
   .header-search input {
     width: 100%;
   }
+
+  .navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navbar a {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
+  .btn-cita-nav {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+  }
 }
+
+
