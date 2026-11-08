@@ -875,8 +875,11 @@ main,
 }
 
 .btn-mapa-cita {
-    display: inline-block;
+   display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    box-sizing: border-box; /* Previene el desborde por padding/borde */
     text-align: center;
     background-color: var(--white);
     color: var(--primary);
