@@ -1439,8 +1439,95 @@ background-color: var(--primary);
     color: var(--primary-dark);
     cursor: pointer;
     padding: 0.4rem;
+}/* Sección Galería de Instalaciones */
+.gallery-section {
+    padding: 60px 0;
+    background-color: var(--white, #ffffff);
+    text-align: center;
 }
 
+.gallery-section .section-subtitle {
+    color: #4a4a4a;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    font-size: 0.95rem;
+}
 
+.main-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
+.gallery-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 4 / 3;
+}
 
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    color: #ffffff;
+    padding: 20px 12px 10px 12px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .main-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .main-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-mini-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.mini-photo {
+    height: 110px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mini-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-mini-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px; /* Crea espacio respirable con el botón de Google Maps */
+}
