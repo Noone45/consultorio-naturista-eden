@@ -1272,43 +1272,77 @@ background-color: var(--primary);
 }
 
 
+/* 1. Alineación universal del Header en móviles (para index, cita, productos, etc.) */
 @media (max-width: 768px) {
   .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 10px 15px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 10px 15px !important;
   }
 
   .navbar ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
   }
 
   .navbar li {
-    margin: 0;
+    margin: 0 !important;
   }
 
-  .header-search {
-    width: 100%;
-    max-width: 90%;
-    margin: 0 auto;
+  .header-search, 
+  #search-form-page,
+  div[class*="search"] {
+    width: 100% !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
   }
 
   .header-search form {
-    display: flex;
-    align-items: center;
-    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 
   .header-search input {
-    width: 100%;
+    width: 100% !important;
   }
+}
+
+/* 2. Ajuste para que NINGÚN botón se salga de sus tarjetas */
+.action-card, 
+.contacto-info-card, 
+.form-cita-card {
+    box-sizing: border-box !important;
+    overflow: hidden !important; /* Previene el desborde visual */
+}
+
+.action-btn, 
+.btn-mapa-cita, 
+.btn-submit-cita,
+.action-card .action-btn {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    word-wrap: break-word !important;
+}
+
+@media (max-width: 768px) {
+
+    .action-btn, 
+    .btn-mapa-cita {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0.75rem 0.5rem !important;
+        font-size: 0.9rem !important;
+    }
 }
