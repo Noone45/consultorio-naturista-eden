@@ -14,7 +14,7 @@ if (slides.length > 0) {
     setInterval(nextSlide, slideInterval);
 }
 
-// --- 2. BUSCADOR GLOBAL ---
+// --- 2. BUSCADOR GLOBAL PRUEBA GIT---
 function buscarServicio() {
     const input = document.getElementById('search-input');
     if (!input) return;
