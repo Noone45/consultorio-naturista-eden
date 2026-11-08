@@ -354,6 +354,7 @@ main,
 
 .footer-col h3, .footer-col h4 {
     margin-bottom: 1rem;
+    
     color: #879883; /* Títulos en Verde Salvia */
 }
 
@@ -1455,7 +1456,7 @@ background-color: var(--primary);
 
 .main-gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 

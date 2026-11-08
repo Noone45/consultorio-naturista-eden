@@ -20,18 +20,31 @@
 <body>
 
   
+
 <header class="main-header">
     <div class="container header-container">
         
-      
+        <!-- 1. Logo (Izquierda) -->
         <a href="index.html" class="logo-wrapper">
             <img src="images/logo.jpg" alt="Consultorio Naturista Edén" class="logo-img">
         </a>
 
+        <!-- 2. Buscador (Centro / Flexible) -->
+        <div class="header-search">
+            <form id="search-form" onsubmit="event.preventDefault(); buscarServicio();">
+                <input type="text" id="search-input" placeholder="¿Qué producto buscas?" required>
+                <button type="submit" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- 3. Menú Hamburguesa (Derecha extrema) -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
         </button>
 
+        <!-- 4. Menú Navegación Desplegable -->
         <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -41,15 +54,6 @@
                 <li><a href="cita.html" class="btn-cita-nav">Agendar Cita</a></li>
             </ul>
         </nav>
-
-        <div class="header-search">
-            <form id="search-form" onsubmit="event.preventDefault(); buscarServicio();">
-                <input type="text" id="search-input" placeholder="¿Qué producto buscas?" required>
-                <button type="submit" aria-label="Buscar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
 
     </div>
 </header>
