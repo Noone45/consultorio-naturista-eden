@@ -214,18 +214,19 @@ body {
     padding: 0.3rem 0;
 }
 .action-btn {
-    display: inline-flex;
+   display: flex; /* Cambiado de inline-flex a flex */
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
     background-color: var(--white);
     color: var(--dark);
-    padding: 0.75rem 1.4rem;
+    padding: 0.75rem 1rem; /* Reducido ligeramente el padding lateral */
     border-radius: 8px;
     font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;
-    align-self: flex-start;
+    width: 100%; /* Forzar a que tome el 100% del contenedor disponible */
+    box-sizing: border-box; /* Evita que el padding sume ancho extra */
     margin-top: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.25s ease;
@@ -454,7 +455,6 @@ main,
 }
 
 @media (max-width: 768px) {
-    /* Ocultar barra superior informativa para ahorrar espacio */
     .top-bar {
         display: none;
     }
@@ -1269,4 +1269,46 @@ background-color: var(--primary);
 
 .no-resultados small {
     color: #777;
+}
+
+/* AJUSTE EXCLUSIVO PARA LA BARRA DE BÚSQUEDA Y NAVEGACIÓN EN MÓVILES */
+@media (max-width: 768px) {
+  /* 1. Asegurar que el contenedor del header ordene sus elementos verticalmente */
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+  }
+
+  /* 2. Colocar el logo primero */
+  .logo-wrapper {
+    order: 1;
+  }
+
+  /* 3. Colocar el menú de navegación segundo */
+  .navbar {
+    order: 2;
+    width: 100%;
+  }
+
+  /* 4. Colocar la barra de búsqueda al final y centrada */
+  .header-search {
+    order: 3;
+    width: 100%;
+    max-width: 90%;
+    margin: 5px auto 0 auto;
+  }
+
+  /* 5. Asegurar que la barra ocupe todo el ancho disponible */
+  .header-search form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header-search input {
+    width: 100%;
+  }
 }
