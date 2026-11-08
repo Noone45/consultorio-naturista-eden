@@ -430,28 +430,95 @@ main,
     }
 }
 
-
-
 @media (max-width: 992px) {
-    .header-container {
-        padding: 0.5rem 0;
-    }
+  /* 1. Contenedor principal en posición relativa */
+  .header-container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 8px 50px 8px 10px !important; /* El padding-right de 50px reserva espacio exclusivo para el menú a la derecha */
+    box-sizing: border-box !important;
+  }
 
-    .logo-img {
-        height: 90px; 
-    }
+  /* 2. Logo a la izquierda */
+  .logo-wrapper {
+    flex-shrink: 0 !important;
+    margin-right: 8px !important;
+  }
 
-    .logo-wrapper {
-        margin-bottom: -20px;
-    }
+  .logo-img {
+    height: 48px !important; /* Tamaño compacto para no saturar verticalmente */
+    width: auto !important;
+  }
 
-    .navbar ul {
-        gap: 1rem;
-    }
+  /* 3. Buscador ocupa TODO el espacio disponible del centro */
+ .header-search {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: 15px !important;  /* Separación respecto al logo */
+    margin-right: 55px !important; /* Espacio de seguridad para el botón hamburguesa en horizontal */
+  }
 
-    .navbar a {
-        font-size: 0.9rem;
-    }
+  .header-search form {
+    width: 100% !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-search input {
+    width: 100% !important;
+    font-size: 0.8rem !important;
+    padding-left: 10px !important;
+    padding-right: 35px !important; /* Asegura espacio para la lupa dentro del input */
+    box-sizing: border-box !important;
+  }
+
+  /* 4. Menú Hamburguesa FORZADO a la extrema derecha */
+  .menu-toggle {
+    display: block !important;
+    position: absolute !important;
+    right: 12px !important; /* Pegado al borde derecho del header */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* Centrado verticalmente */
+    z-index: 10 !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.6rem !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    margin: 0 !important;
+  }
+
+  /* 5. Menú Navegable Desplegable */
+  .navbar {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    opacity: 0;
+    background-color: var(--white);
+    z-index: 999;
+  }
+
+  .navbar.active {
+    max-height: 320px;
+    opacity: 1;
+    border-bottom: 2px solid var(--gray-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .navbar ul {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 15px 0 !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1274,68 +1341,106 @@ background-color: var(--primary);
     color: #777;
 }
 
-/* AJUSTE EXCLUSIVO PARA LA BARRA DE BÚSQUEDA Y NAVEGACIÓN EN MÓVILES */
 @media (max-width: 768px) {
-  /* 1. Asegurar que el contenedor del header ordene sus elementos verticalmente */
+  /* 1. Contenedor principal con espacio relativo */
   .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 15px;
-    
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 8px 10px !important;
+    box-sizing: border-box !important;
   }
 
-  /* 2. Colocar el logo primero */
+  /* 2. Logo a la izquierda */
   .logo-wrapper {
-    order: 1;
+    flex-shrink: 0 !important;
+    margin-right: 6px !important;
   }
 
-  /* 3. Colocar el menú de navegación segundo */
-  .navbar {
-    order: 2;
-    width: 100%;
+  .logo-img {
+    height: 48px !important;
+    width: auto !important;
   }
 
-  /* 4. Colocar la barra de búsqueda al final y centrada */
+  /* 3. Buscador en el centro (CON FRENO A LA DERECHA PARA NO SOLAPAR) */
   .header-search {
-   
-    width: 100%;
-    max-width: 90%;
-    margin: 4px auto 0 auto;
+    flex: 1 !important;
+    min-width: 0 !important;
+    margin-left: 4px !important;
+    margin-right: 48px !important; /* <--- ESTE ESPACIO SEPARA LA LUPA DE LA HAMBURGUESA */
   }
 
-  /* 5. Asegurar que la barra ocupe todo el ancho disponible */
   .header-search form {
-    display: flex;
-    align-items: center;
-    width: 100%;
+    width: 100% !important;
+    display: flex !important;
+    box-sizing: border-box !important;
   }
 
   .header-search input {
-    width: 100%;
+    width: 100% !important;
+    font-size: 0.8rem !important;
+    padding-left: 8px !important;
+    padding-right: 32px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 4. Menú hamburguesa pegado a la DERECHA EXTREMA */
+  .menu-toggle {
+    display: block !important;
+    position: absolute !important;
+    right: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    margin: 0 !important;
+  }
+
+  /* 5. Menú Navegación Desplegable */
+  .navbar {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    opacity: 0;
+    background-color: var(--white);
+    z-index: 999;
+  }
+
+  .navbar.active {
+    max-height: 320px;
+    opacity: 1;
+    border-bottom: 2px solid var(--gray-light);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   .navbar ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px 14px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-
-  .navbar a {
-    font-size: 0.88rem;
-    white-space: nowrap;
-  }
-
-  .btn-cita-nav {
-    padding: 0.4rem 0.9rem;
-    font-size: 0.85rem;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 15px 0 !important;
   }
 }
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+
 
 

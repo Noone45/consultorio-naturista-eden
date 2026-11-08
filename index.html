@@ -32,16 +32,15 @@
         </div>
     </div>
 
-   
-   <header class="main-header">
+<header class="main-header">
     <div class="container header-container">
         
-       
-        <a href="#" class="logo-wrapper">
+        <!-- 1. Logo (Izquierda) -->
+        <a href="index.html" class="logo-wrapper">
             <img src="images/logo.jpg" alt="Consultorio Naturista Edén" class="logo-img">
         </a>
 
-        
+        <!-- 2. Buscador (Centro / Flexible) -->
         <div class="header-search">
             <form id="search-form" onsubmit="event.preventDefault(); buscarServicio();">
                 <input type="text" id="search-input" placeholder="¿Qué producto buscas?" required>
@@ -51,17 +50,22 @@
             </form>
         </div>
 
-      
-      <nav class="navbar">
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="nosotros.html">Nuestra Filosofía</a></li>
-        <li><a href="productos.html">Productos</a></li> 
-        
-      <li><a href="cita.html" class="btn-cita-nav">Agendar Cita</a></li>
-    </ul>
-</nav>
+        <!-- 3. Menú Hamburguesa (Derecha extrema) -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- 4. Menú Navegación Desplegable -->
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="nosotros.html">Nuestra Filosofía</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="cita.html" class="btn-cita-nav">Agendar Cita</a></li>
+            </ul>
+        </nav>
+
     </div>
 </header>
 

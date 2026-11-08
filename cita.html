@@ -17,31 +17,42 @@
 <body>
 
   
-    <header class="main-header">
-        <div class="container header-container">
-            <a href="index.html" class="logo-wrapper">
-                <img src="images/logo.jpg" alt="Consultorio Naturista Edén" class="logo-img">
-            </a>
+  
+<header class="main-header">
+    <div class="container header-container">
+        
+       
+        <a href="index.html" class="logo-wrapper">
+            <img src="images/logo.jpg" alt="Consultorio Naturista Edén" class="logo-img">
+        </a>
 
-            <div class="header-search">
-                <form id="search-form-page" onsubmit="event.preventDefault(); buscarServicio();">
-                    <input type="text" id="search-input" placeholder="¿Qué tratamiento buscas?" required>
-                    <button type="submit" aria-label="Buscar">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
-            </div>
+       
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index.html#servicios">Servicios</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="cita.html" class="btn-cita-nav active">Agendar Cita</a></li>
-                </ul>
-            </nav>
+   
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="nosotros.html">Nuestra Filosofía</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="cita.html" class="btn-cita-nav">Agendar Cita</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-search">
+            <form id="search-form" onsubmit="event.preventDefault(); buscarServicio();">
+                <input type="text" id="search-input" placeholder="¿Qué producto buscas?" required>
+                <button type="submit" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
         </div>
-    </header>
+
+    </div>
+</header>
 
     <!-- Sección Principal de Citas -->
     <main class="container cita-page-section">
